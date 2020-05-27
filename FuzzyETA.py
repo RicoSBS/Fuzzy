@@ -9,7 +9,7 @@ from urllib.request import FancyURLopener
 from datetime import datetime
 
 
-def Fuzzy():
+def Fuzzy(waktuInput):
 	# The universe of variables and membership functions
 	ETA = ctrl.Antecedent(np.arange(-1, 21, 0.1), 'ETA')
 	DeltaT = ctrl.Antecedent(np.arange(-10, 20, 0.1), 'DeltaT')
@@ -110,8 +110,8 @@ def Fuzzy():
 	braking = ctrl.ControlSystemSimulation(FLC1_ctrl)
 
 	braking.input['DeltaT'] = -6
-	print(driving_time_seconds_work2home/60)
-	braking.input['ETA'] = driving_time_seconds_work2home/60 #convert to mins
+	print(waktuInput/60)
+	braking.input['ETA'] = waktuInput/60 #convert to mins
 
 	braking.compute()
 
@@ -293,7 +293,7 @@ class S(BaseHTTPRequestHandler):
         target = open("Results.csv", 'a')
         target.write( datetime.now().strftime('%Y-%m-%d %H:%M') + ";" + str(driving_time_seconds_work2home) + ";"+ "\n")
         target.close()
-        Fuzzy()
+        Fuzzy(driving_time_seconds_work2home)
 
 
     def do_POST(self):
