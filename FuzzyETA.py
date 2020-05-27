@@ -110,6 +110,7 @@ def Fuzzy():
 	braking = ctrl.ControlSystemSimulation(FLC1_ctrl)
 
 	braking.input['DeltaT'] = -6
+	print(driving_time_seconds_work2home/60)
 	braking.input['ETA'] = driving_time_seconds_work2home/60 #convert to mins
 
 	braking.compute()
