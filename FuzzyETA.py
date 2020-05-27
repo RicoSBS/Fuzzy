@@ -117,7 +117,7 @@ def Fuzzy(waktuInput):
 
 	# print(braking.output['FLC1'])
 
-	FLC1.view(sim=braking)
+	# FLC1.view(sim=braking)
 
 	# plt.show()
 
@@ -158,9 +158,9 @@ def Fuzzy(waktuInput):
 	FLC2['Sejuk'] = fuzz.trimf(FLC2.universe, [21, 22, 23])
 	FLC2['Sedang'] = fuzz.trimf(FLC2.universe, [22, 23, 24])
 
-	TFout.view()
-	DeltaT2.view()
-	FLC2.view()
+	# TFout.view()
+	# DeltaT2.view()
+	# FLC2.view()
 
 	"""
 	==================
@@ -246,9 +246,9 @@ def Fuzzy(waktuInput):
 
 	print(round(braking2.output['FLC2'],0))
 
-	FLC2.view(sim=braking2)
+	# FLC2.view(sim=braking2)
 
-	plt.show()
+	# plt.show()
 
 	"=================================================================================="
 
