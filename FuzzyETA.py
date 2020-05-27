@@ -288,6 +288,7 @@ class S(BaseHTTPRequestHandler):
         result_work2home = simplejson.load(myopener.open(url_work2home))
         driving_time_seconds_work2home = result_work2home['rows'][0]['elements'][0]['duration_in_traffic']['text']
         print(datetime.now().strftime('%Y-%m-%d %H:%M') + ";" + str(driving_time_seconds_work2home) + ";" + "\n")
+        print(result_work2home)
 
         target = open("Results.csv", 'a')
         target.write( datetime.now().strftime('%Y-%m-%d %H:%M') + ";" + str(driving_time_seconds_work2home) + ";"+ "\n")
