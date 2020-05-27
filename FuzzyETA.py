@@ -265,6 +265,7 @@ class S(BaseHTTPRequestHandler):
         self.wfile.write("GET request for {}".format(self.path).encode('utf-8'))
 
         home_coord = "-7.7545807,110.37433493" # Home
+        home_coord = "-7.7575241,110.3626798" # Home
         work_coord2 = str(self.path) # Work
 
         lat = ""
